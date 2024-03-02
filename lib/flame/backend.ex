@@ -29,7 +29,8 @@ defmodule FLAME.Backend do
   Backend implementations can react to these messages to handle the remotely
   provisioned instance booting up or shutting down.
 
-  See `FLAME.FlyBackend` for an example implementation of this behavior.
+  See `FLAME.FlyBackend` or `FLAME.GigalixirBackend` for example implementations
+  of this behavior.
   """
   @callback init(opts :: Keyword.t()) :: {:ok, state :: term()} | {:error, term()}
   @callback remote_spawn_monitor(state :: term, func :: function() | term) ::

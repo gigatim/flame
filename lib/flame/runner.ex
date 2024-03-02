@@ -16,9 +16,9 @@ defmodule FLAME.Runner do
   #     Runner.shutdown(runner)
   #
   # When a caller exits or crashes, the remote node will automatically be terminated.
-  # For distributed erlang backends, like `FLAME.FlyBackend`, this will be
-  # accomplished automatically by the `FLAME.Terminator`, but other methods
-  # are possible.
+  # For distributed erlang backends, like `FLAME.FlyBackend` or 
+  # `FLAME.GigalixirBackend`, this will be accomplished automatically by the 
+  # `FLAME.Terminator`, but other methods are possible.
 
   use GenServer
   require Logger

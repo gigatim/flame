@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.0 (2024-03-01)
+- Add `FLAME.GigalixirBackend` for running on [Gigalixir](https://gigalixir.com)
+
 ## 0.1.11 (2024-02-22)
 - Add ability to configure custom metadata for launch FlyBackend machine
 

@@ -137,16 +137,19 @@ defmodule FLAME do
   environments, as you can have your code simply execute locally in most cases
   and worry about scaling the operation only in production.
 
-  For production, FLAME provides the `FLAME.FlyBackend`, which uses
-  [Fly.io](https://fly.io). Because Fly deploys a containerized machine of
-  your application, a single Fly API call can boot a machine running your
-  exact Docker deployment image, allowing closures to be executed across
-  distributed nodes.
+  For production, FLAME provides the `FLAME.FlyBackend` and `FLAME.GigalixirBackend`.
+
+  `FLAME.FlyBackend` uses [Fly.io](https://fly.io) and  `FLAME.GigalixirBackend`
+  uses [Gigalixir](https://gigalixir.com).  Because Fly and Gigalixir deploy a
+  containerized machine of your application, a single API call can boot a
+  machine running your exact deployment image, allowing closures to be executed
+  across distributed nodes.
 
   Default backends can be configured in your `config/runtime.exs`:
 
       if config_env() == :prod do
         config :flame, :backend, FLAME.FlyBackend
+        config :flame, :backend, FLAME.GigalixirBackend
         config :flame, FLAME.FlyBackend, token: System.fetch_env!("FLY_API_TOKEN")
         ...
       end
